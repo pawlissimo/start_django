@@ -7,13 +7,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     mc \
     mcedit
 
-RUN mkdir /code
+WORKDIR /build
 
-WORKDIR /code
-
-ADD requirements.txt /code/
+ADD requirements.txt /build/
 
 RUN pip3 install -U pip \
   && pip3 install -r requirements.txt
 
-ADD . /code/
+
+WORKDIR /code
+
+#ADD . /code/

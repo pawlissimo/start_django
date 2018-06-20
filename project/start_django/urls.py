@@ -22,4 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path(r'', views.index, name='index'),
+    path(r'upload/', views.upload, name='upload'),
+    path(r'cleanup/', views.cleanup, name='cleanup'),
+
 ]

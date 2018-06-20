@@ -14,13 +14,14 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - db-start_django:/var/lib/postgresql/data
+      - db_start_django:/var/lib/postgresql/data
 
   web:
     build: ./docker/web
     restart: always
     volumes:
-      - .:/code
+      - ./project:/code
+      - docker_build:/build
     ports:
       - "8000:8000"
     depends_on:
@@ -28,4 +29,5 @@ services:
     command: python3 manage.py runserver 0.0.0.0:8000
 
 volumes:
-  db-start_django:
+  db_start_django:
+  docker_build:
