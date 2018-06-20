@@ -19,6 +19,11 @@ services:
   web:
     build: ./docker/web
     restart: always
+    environment:
+      CLOUDINARY_URL: cloudinary://315421421813724:MzHbUUMPd0iKzZcCD3QDwub5tYk@pawlissimo
+      CLOUDINARY_CLOUD_NAME: "pawlissimo"
+      CLOUDINARY_API_KEY: "315421421813724"
+      CLOUDINARY_API_SECRET: "MzHbUUMPd0iKzZcCD3QDwub5tYk"
     volumes:
       - ./project:/code
       - docker_build:/build
