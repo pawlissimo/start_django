@@ -1,5 +1,6 @@
 Django==2.0.4
 psycopg2-binary
-# cloudinary
+cloudinary
 # -e git://github.com/RTLcoil/pycloudinary.git@feature/upload-large-with-url-support#egg=pycloudinary
--e git://github.com/cloudinary/pycloudinary#egg=pycloudinary
+# -e git://github.com/cloudinary/pycloudinary#egg=pycloudinary
+tox
